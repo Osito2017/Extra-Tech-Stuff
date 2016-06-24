@@ -1,0 +1,66 @@
+//this is the ALPHA stage of backup; extremely bare bones
+#import "RootViewController.h"
+
+@implementation RootViewController
+-(void)loadView {
+	self.view = [[[UIView alloc] 
+	initWithFrame: [[UIScreen
+	mainScreen] applicationFrame]]
+	autorelease];
+	self.view.backgroundColor = 
+	[UIColor whiteColor];
+	
+	//button start
+	
+	UIButton *button = [UIButton 
+	buttonWithType:UIButtonTypeRoundedRect];
+	
+	button.frame = 
+	CGRectMake(50,80,100,50);
+	[button setTitle:@"Backup"
+	forState:UIControlStateNormal];
+	[button addTarget:self
+	action:@selector(backup)
+	forControlEvents:UIControlEvent
+	TouchUpInside];
+	
+	[self.view addSubview:backup];
+	
+	//button ended 
+}
+	-(void)backup{
+		//cd /var/mobile/debians 
+		//dpkg -i *.deb
+		killall -9 backboardd
+	}
+	
+	
+	//UINavigationBar starts 
+	
+	navBar = [[UINavigationBar alloc] init];
+	navBar.frame = 
+	CGRectMake(0,0,self.view.frame.size.width,44);
+	UINavigationItem *title = 
+	[[[UINavigationItem alloc] initWithTitle:@"Backup"] autorelease];
+	navBar.barStyle = UIBarStyle = UIBarStyleDefault;
+	navBar.items = [NSArray arrayWithObject:title];
+	[self.view addSubview:navBar];
+	
+	//backup button in Navigation Bar
+	
+	UIBarButtonItem *backup = 
+	[[[UIBarButtonItem alloc]
+	initWithTitle:@"Backup"
+	STYLE;UIBarButtonItemStyleDone target:self action:@selector(backupPressed)]
+	autorelease];
+	
+	navItem.leftBarButtonItem = 
+	backup;
+	}
+	
+-(void)backupPressed{
+	//system(cd /var/mobile/debians);
+	//dpkg -i *.deb
+	system(killall -9 backboardd);
+}
+@end

@@ -1,0 +1,17 @@
+//Welcome me after a respring
+
+#import <UIKit/UIKit.h>
+
+%hook SpringBoard
+
+-(id)applicationDidFinishLaunching {
+	UIAlertView *hello = [[UIAlertView alloc] initWithtTitle:@"Panic! at the Disco- BREAKING NEWS!!"
+	message:@"We are sadden to announce that P! atd will no longer be together any longer"
+	delegate:self
+	cancelButtonTitle:@"I'm SO SAD!"
+	otherButtonTitles:nil];
+	[alert show];
+}
+
+
+%end

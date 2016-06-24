@@ -1,0 +1,26 @@
+if [ -f "/var/mobile/Library/Preferences/com.fidele007.hotdogprefs.plist" ];
+then
+	cp var/mobile/Library/Preferences/com.fidele007.hotdogprefs.plist var/mobile/Package/var/mobile/Library/Preferences
+else
+then
+	echo "Hotdog not currently installed"  >> var/mobile/Package/var/mobile/Log/log.txt
+>&2
+fi 
+
+if [ -f "/var/mobile/Library/Preferences/me.chewitt.MCPrefs.plist" ];
+then
+	cp var/mobile/Library/Preferences/me.chewitt.MCPrefs.plist var/mobile/Package/var/mobile/Library/Preferences
+else
+then
+	echo "Messages Customizer not currently installed" >> var/mobile/Package/var/mobile/Log/log.txt
+>&2
+fi 
+
+if [ -f "/var/mobile/Library/Preferences/com.thomasfinch.priorityhub.plist" ];
+then
+	cp var/mobile/Library/Preferences/com.thomasfinch.priorityhub.plist var/mobile/Package/var/mobile/Library/Preferences
+else
+then
+	echo "Priority Hub not currently installed" >> var/mobile/Package/var/mobile/Log/log.txt
+>&2
+fi

@@ -1,0 +1,10 @@
+//Define a word by 3D Touch
+
+#import <UIKit/UILongPressGestureRecognizer.h>
+#import <SpringBoardUIServices/UITextFieldDelegate.h>
+
+%hook SpringBoard
+
+-(void)textFieldDidBeginEditing:(id)arg1{
+	allocWithZone: initWithText
+}
